@@ -1,4 +1,4 @@
-/* Copyright (c) 2009-2019, Linux Foundation. All rights reserved.
+/* Copyright (c) 2009-2020, Linux Foundation. All rights reserved.
  * Copyright (C) 2021 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
@@ -990,7 +990,10 @@ static int msm_otg_reset(struct usb_phy *phy)
 			motg->rm_pulldown) {
 		msm_otg_dbg_log_event(&motg->phy, "PHY NON DRIVE", 0, 0);
 		msm_chg_block_on(motg);
+	}
+    
 	mutex_unlock(&motg->lock);
+
 
 	return 0;
 }
